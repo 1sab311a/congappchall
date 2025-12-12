@@ -1,0 +1,143 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+}
+
+.active {
+  display: block;
+}
+
+button {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004c99;
+}
+
+select {
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+#rights-container[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Rights pop-up tooltip */
+.rights-item {
+  cursor: pointer;
+  margin: 8px 0;
+  list-style-type: none;
+  padding: 8px;
+  background-color: #e3f2fd;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.tooltip {
+  display: none;
+  background-color: #fff9c4;
+  border: 1px solid #fdd835;
+  padding: 5px 8px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.rights-item:hover .tooltip {
+  display: block;
+}
+
+.answer {
+  color: #007bff;
+}
+
+/* Home Screen Button Hover Effects */
+#home-screen button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#home-screen button:hover {
+  transform: scale(1.05); /* Slightly bigger */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Soft shadow */
+}
+body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+    }
+
+    /* Phone frame */
+    .phone-frame {
+      width: 375px;
+      height: 667px;
+      margin: 2em auto;
+      border: 16px solid #333;
+      border-radius: 36px;
+      background: white;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .screen {
+      display: none;
+      padding: 1em;
+      height: 100%;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    h1, h2 {
+      margin: 0.5em 0;
+    }
+
+    ul { list-style: none; padding: 0; }
+    li { margin: 0.5em 0; }
+
+    button {
+      cursor: pointer;
+      margin: 0.5em;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      color: white;
+    }
+
+    #rights-btn { background: #4CAF50; }
+    #workshops-btn { background: #2196F3; }
+    #help-btn { background: #FF9800; }
+    #quiz-btn { background: #9C27B0; }
+    .back-home-btn { background: #555; }
+
+    /* Home screen fancy styling */
+    #home-screen {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+    }
+
+    select {
+      padding: 0.3em;
+      margin-left: 0.5em;
+    }
