@@ -432,9 +432,6 @@ if (typeof workshopsData !== "undefined") {
   workshopsData.ar.push(...newWorkshops_ar);
 }
 
-  { q: "هل يمكن للشرطة توقيفي بدون سبب؟", a: "لا، تحتاج الشرطة إلى سبب معقول لتوقيفك في معظم الحالات." }
-];
-
 // ---------- Append new FAQs to existing list ----------
 function appendMoreFAQs() {
   const container = document.getElementById('faq-list');
