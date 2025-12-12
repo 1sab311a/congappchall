@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>RightsNow!</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="phone-frame">
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen active">
+      <h1>👋 Welcome!</h1>
+      <p>Discover your rights, find workshops, get help, and take a quick quiz!</p>
+
+      <div style="margin-bottom: 1.5em;">
+        <label>Select Language:</label>
+        <select id="languageSelect" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1em;">
+        <button id="rights-btn" onclick="showScreen('rights-screen')">My Rights</button>
+        <button id="workshops-btn" onclick="showScreen('workshops-screen')">Workshops</button>
+        <button id="help-btn" onclick="showScreen('help-screen')">Help</button>
+        <button id="quiz-btn" onclick="showScreen('quiz-screen')">Quick Quiz</button>
+      </div>
+    </div>
+
+    <!-- Rights Screen -->
+    <div id="rights-screen" class="screen">
+      <h2>My Rights</h2>
+      <label>Filter by Scenario:</label>
+      <select id="scenarioSelect" onchange="filterRights()">
+        <option value="all">All</option>
+        <option value="police">Police</option>
+        <option value="school">School</option>
+        <option value="online">Online</option>
+        <option value="billOfRights">Bill of Rights 📜</option>
+      </select>
+      <ul id="rights-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Workshops Screen -->
+    <div id="workshops-screen" class="screen">
+      <h2>Workshops Near You</h2>
+      <label>Filter by Type:</label>
+      <select id="workshopFilter" onchange="filterWorkshops()">
+        <option value="all">All</option>
+        <option value="in-person">In-person</option>
+        <option value="virtual">Virtual</option>
+      </select>
+      <ul id="workshop-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Help Screen -->
+    <div id="help-screen" class="screen">
+      <h2>Help & Resources</h2>
+      <ul id="faq-list"></ul>
+      <label>Report an Issue / Ask a Question:</label>
+      <form id="help-form" onsubmit="alert('Form submitted!'); return false;">
+        <input type="text" placeholder="Your question" required>
+        <button type="submit">Submit</button>
+      </form>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen">
+      <h2>Quick Rights Quiz</h2>
+      <div id="quiz-container">
+        <p id="quiz-question"></p>
+        <div id="quiz-options"></div>
+        <p id="quiz-feedback"></p>
+        <p id="quiz-score"></p>
+        <button onclick="nextQuizQuestion()">Next Question</button>
+      </div>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+  </div>
+<div class="phone-frame">
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen active">
+      <h1>👋 Welcome!</h1>
+      <p>Discover your rights, find workshops, get help, and take a quick quiz!</p>
+
+      <div style="margin-bottom: 1.5em;">
+        <label>Select Language:</label>
+        <select id="languageSelect" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1em;">
+        <button id="rights-btn" onclick="showScreen('rights-screen')">My Rights</button>
+        <button id="workshops-btn" onclick="showScreen('workshops-screen')">Workshops</button>
+        <button id="help-btn" onclick="showScreen('help-screen')">Help</button>
+        <button id="quiz-btn" onclick="showScreen('quiz-screen')">Quick Quiz</button>
+      </div>
+    </div>
+
+    <!-- Rights Screen -->
+    <div id="rights-screen" class="screen">
+      <h2>My Rights</h2>
+      <label>Filter by Scenario:</label>
+      <select id="scenarioSelect" onchange="filterRights()">
+        <option value="all">All</option>
+        <option value="police">Police</option>
+        <option value="school">School</option>
+        <option value="online">Online</option>
+        <option value="billOfRights">Bill of Rights 📜</option>
+      </select>
+      <ul id="rights-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Workshops Screen -->
+    <div id="workshops-screen" class="screen">
+      <h2>Workshops Near You</h2>
+      <label>Filter by Type:</label>
+      <select id="workshopFilter" onchange="filterWorkshops()">
+        <option value="all">All</option>
+        <option value="in-person">In-person</option>
+        <option value="virtual">Virtual</option>
+      </select>
+      <ul id="workshop-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Help Screen -->
+    <div id="help-screen" class="screen">
+      <h2>Help & Resources</h2>
+      <ul id="faq-list"></ul>
+      <label>Report an Issue / Ask a Question:</label>
+      <form id="help-form" onsubmit="alert('Form submitted!'); return false;">
+        <input type="text" placeholder="Your question" required>
+        <button type="submit">Submit</button>
+      </form>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen">
+      <h2>Quick Rights Quiz</h2>
+      <div id="quiz-container">
+        <p id="quiz-question"></p>
+        <div id="quiz-options"></div>
+        <p id="quiz-feedback"></p>
+        <p id="quiz-score"></p>
+        <button onclick="nextQuizQuestion()">Next Question</button>
+      </div>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+  </div>
+<div class="phone-frame">
+
+    <!-- Home Screen -->
+    <div id="home-screen" class="screen active">
+      <h1>👋 Welcome!</h1>
+      <p>Discover your rights, find workshops, get help, and take a quick quiz!</p>
+
+      <div style="margin-bottom: 1.5em;">
+        <label>Select Language:</label>
+        <select id="languageSelect" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1em;">
+        <button id="rights-btn" onclick="showScreen('rights-screen')">My Rights</button>
+        <button id="workshops-btn" onclick="showScreen('workshops-screen')">Workshops</button>
+        <button id="help-btn" onclick="showScreen('help-screen')">Help</button>
+        <button id="quiz-btn" onclick="showScreen('quiz-screen')">Quick Quiz</button>
+      </div>
+    </div>
+
+    <!-- Rights Screen -->
+    <div id="rights-screen" class="screen">
+      <h2>My Rights</h2>
+      <label>Filter by Scenario:</label>
+      <select id="scenarioSelect" onchange="filterRights()">
+        <option value="all">All</option>
+        <option value="police">Police</option>
+        <option value="school">School</option>
+        <option value="online">Online</option>
+        <option value="billOfRights">Bill of Rights 📜</option>
+      </select>
+      <ul id="rights-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Workshops Screen -->
+    <div id="workshops-screen" class="screen">
+      <h2>Workshops Near You</h2>
+      <label>Filter by Type:</label>
+      <select id="workshopFilter" onchange="filterWorkshops()">
+        <option value="all">All</option>
+        <option value="in-person">In-person</option>
+        <option value="virtual">Virtual</option>
+      </select>
+      <ul id="workshop-list"></ul>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Help Screen -->
+    <div id="help-screen" class="screen">
+      <h2>Help & Resources</h2>
+      <ul id="faq-list"></ul>
+      <label>Report an Issue / Ask a Question:</label>
+      <form id="help-form" onsubmit="alert('Form submitted!'); return false;">
+        <input type="text" placeholder="Your question" required>
+        <button type="submit">Submit</button>
+      </form>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen">
+      <h2>Quick Rights Quiz</h2>
+      <div id="quiz-container">
+        <p id="quiz-question"></p>
+        <div id="quiz-options"></div>
+        <p id="quiz-feedback"></p>
+        <p id="quiz-score"></p>
+        <button onclick="nextQuizQuestion()">Next Question</button>
+      </div>
+      <button class="back-home-btn" onclick="showScreen('home-screen')">Back to Home</button>
+    </div>
+
+  </div>
+</body>
